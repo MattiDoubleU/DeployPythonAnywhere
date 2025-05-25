@@ -1,6 +1,6 @@
 function getAll(callback) {
     $.ajax({
-        "url": "http://127.0.0.1:5000/api/expenses", 
+        "url": "/api/expenses", 
         "data": "", 
         "dataType": "JSON",
         "success": function(result) {
@@ -25,7 +25,7 @@ function createExpense(expenseData, callback) {
 
     console.log("Creating expense: " + JSON.stringify(expenseData));
     $.ajax({
-        "url": "http://127.0.0.1:5000/api/expenses", 
+        "url": "/api/expenses", 
         "method": "POST",
         "data": JSON.stringify(expenseData),
         "dataType": "JSON",
@@ -52,7 +52,7 @@ function updateExpense(Expense, callback) {
 
     console.log("Updating expense: " + JSON.stringify(formattedData));
     $.ajax({
-        "url": "http://127.0.0.1:5000/api/expenses/" + encodeURI(Expense.Transactionnumber), // Use Transactionnumber for ID in URL
+        "url": "/api/expenses/" + encodeURI(Expense.Transactionnumber), // Use Transactionnumber for ID in URL
         "method": "PUT",
         "data": JSON.stringify(Expense),
         "dataType": "JSON",
@@ -71,7 +71,7 @@ function updateExpense(Expense, callback) {
 function deleteExpense(id, callback) {
     console.log("Deleting expense with ID: " + id);
     $.ajax({
-        "url": "http://127.0.0.1:5000/api/expenses/" + id, // 'id' here refers to Transactionnumber
+        "url": "/api/expenses/" + id, // 'id' here refers to Transactionnumber
         "method": "DELETE",
         "data": "", 
         "dataType": "JSON",
