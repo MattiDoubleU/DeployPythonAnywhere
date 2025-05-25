@@ -1,8 +1,8 @@
 config = {
-    'db_host': "localhost",
-    'db_user': "root",
-    'db_password': "",
-    'db_name': "expenses"
+    'db_host': "Luciernagas.mysql.pythonanywhere-services.com",
+    'db_user': "Luciernagas",
+    'db_password': "rootroot",
+    'db_name': "Luciernagas$Expenses"
 }
 
 def get(key, default=None):
