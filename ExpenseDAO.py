@@ -31,7 +31,7 @@ class ExpenseDAO:
 
     def getAll(self):
         cursor = self.getcursor()
-        sql = "SELECT * FROM money_spent"
+        sql = "SELECT * FROM Money_spent"
         cursor.execute(sql)
         results = cursor.fetchall()
         returnArray = []
@@ -42,7 +42,7 @@ class ExpenseDAO:
 
     def findByID(self, id):
         cursor = self.getcursor()
-        sql = "SELECT * FROM money_spent WHERE Transactionnumber = %s"
+        sql = "SELECT * FROM Money_spent WHERE Transactionnumber = %s"
         cursor.execute(sql, (id,))
         result = cursor.fetchone()
         self.closeAll()
@@ -50,7 +50,7 @@ class ExpenseDAO:
 
     def create(self, expense):
         cursor = self.getcursor()
-        sql = "INSERT INTO money_spent (Category, Date, Description, Amount) VALUES (%s, %s, %s, %s)"
+        sql = "INSERT INTO Money_spent (Category, Date, Description, Amount) VALUES (%s, %s, %s, %s)"
         values = (
             expense.get("Category"),
             expense.get("Date"),
@@ -65,7 +65,7 @@ class ExpenseDAO:
 
     def update(self, id, expense):
         cursor = self.getcursor()
-        sql = "UPDATE money_spent SET Category=%s, Date=%s, Description=%s, Amount=%s WHERE Transactionnumber = %s"
+        sql = "UPDATE Money_spent SET Category=%s, Date=%s, Description=%s, Amount=%s WHERE Transactionnumber = %s"
         values = (
             expense.get("Category"),
             expense.get("Date"),
@@ -79,7 +79,7 @@ class ExpenseDAO:
 
     def delete(self, id):
         cursor = self.getcursor()
-        sql = "DELETE FROM money_spent WHERE Transactionnumber = %s"
+        sql = "DELETE FROM Money_spent WHERE Transactionnumber = %s"
         cursor.execute(sql, (id,))
         self.connection.commit()
         self.closeAll()
