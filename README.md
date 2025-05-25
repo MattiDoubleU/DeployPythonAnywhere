@@ -1,2 +1,2 @@
-# DeployPythonAnywhere
-Repository to deploy code to Pythonanywhere
+# deploytopythonanywhere
+used to deploy code to pythonanywhere
